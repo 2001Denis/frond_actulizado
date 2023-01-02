@@ -1,5 +1,94 @@
 
-<h1>
-    login
-    <button routerLink="/register">Registrarme</button>
-</h1>
+
+
+<!-- ======= login ======= -->
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+
+
+        </div>
+
+        <div class="row mt-5">
+
+
+            <div class="col-lg-5">
+
+                <div class="section-title">
+                    <h2>Ingresar</h2>
+
+                </div>
+                <div class="row">
+
+
+                    <div class="col-md-6 form-group">
+                        <input type="text" class="form-control" placeholder="Nombre" required>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                        <input type="password" class="form-control" placeholder="Clave" required>
+                    </div>
+                </div>
+
+                <div class="my-3">
+
+                    <button class="btn btn-outline-secondary" routerLink="/register">Registrarme</button>
+
+                   
+                
+                </div>
+
+
+            </div>
+
+
+
+
+            <div class="col-lg-7">
+                <div class="info">
+                    <div class="address">
+                        <i class="bi-list-ol"></i>
+                        <h4>Se envia al Back-End las credenciales:</h4>
+                        <p> "usuario":"nombre" ; "clave":"MD5 ( clave )"</p>
+                    </div>
+
+                    <div class="email">
+                        <i class="bi-list-ol"></i>
+                        <h4>Credenciales No validas - Mostrar error</h4>
+                        <p> "error":"true" ; "token":""</p>
+                    </div>
+
+                    <div class="phone">
+                        <i class="bi-list-ol"></i>
+                        <h4>Credenciales validas </h4>
+                        <p> "error":"false" ; "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9" ; "datos":" JSON "</p>
+
+                        <p>token guardado localmente en LocalStorage</p>
+                        <p>Hay token en LocalStorage - mostar iconos para altas o modificaciones</p>
+                        <p>Salir --> borra token del LocalStorage luego Se renderiza la pagina</p>
+                    </div>
+
+                    <div class="email">
+                        <i class="bi-list-ol"></i>
+                        <h4>Alta o Modificaciones </h4>
+                        <p>Se envia  "datos":"JSON"</p>
+                        <p>Retorna  "datos":"JSON"</p>
+                        <p>Volver a renderizar la pagina</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+</section>
+<!-- End login -->
+
