@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NuevoproyectoComponent } from './componentes/nuevoproyecto/nuevoproyecto.component';
 import { NuevocertificadoComponent } from './componentes/nuevocertificado/nuevocertificado.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NuevocertificadoComponent } from './componentes/nuevocertificado/nuevoc
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
