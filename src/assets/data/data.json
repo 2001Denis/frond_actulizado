@@ -1,0 +1,67 @@
+{
+    "perfil": {
+      "correo": "denisagustina@hotmail.com",
+      "celular": "+54 291 456 7890",
+      "ciudad": "Bahia Blanca, Bs.As, Argentina",
+      "edad": 2001,
+      "ocupacion": "Estudiante Univertitario",
+      "tele-trabajo": "Disponible"
+  },
+  "habilidades": {
+
+      "conceptos": "Conceptos y herramientas que utilizare : BackEnd, FrondEnd, DevOps, Testing, Seguridad Web ( JWT ), comunicacion efectiva, Api Rest, Scrum, Mvc, Contro de versiones Git, GitHub, Uml, Firebase, Heroku, Heroku Add On, entre otras.",
+      "FrondEnd": {
+          "Angular": 0,
+          "TypeScript": 0,
+          "HTML": 75,
+          "CSS": 30,
+          "JavaScript": 80
+      },
+      "BackEnd": {
+          "SpringBoot": 0,
+          "Mysql": 70,
+          "Php": 75
+      }
+  },
+  "certificados": {
+          "1": {
+              "titulo": "Google Activate",
+              "finalizo": "Finalizado 2022",
+              "detalle": "Desarrollo de APP Movile",
+              "link": [{
+                      "url": "assets\/anexos\/certificado google activate.pdf",
+                      "detalle": "Ver Certificado"
+                  },
+                  {
+                      "url": "https:\/\/learndigital.withgoogle.com\/link\/1nur091p2ww",
+                      "detalle": "Verifique la autenticidad del certificado - ID DE CERTIFICADO: W2K NTE S8F "
+                  }]
+          },
+          "2": {
+              "titulo": "Plan Argentina Programa",
+              "finalizo": "Finalizado 2021",
+              "detalle": "Primera etapa del plan",
+              "link": [{
+                  "url": "assets\/anexos\/certificado_argentina_programa_2022.pdf",
+                  "detalle": "Ver Certificado"
+              }]
+          }
+  },
+  "proyectos": {
+      "1": {
+          "nombre": "Portafolio",
+          "comentario": "Detalle del proyecto",
+          "detalle": "Aplicaci\u00f3n web full stack, que mostrar\u00e1 mis datos personales, habilidades, estudios cursados, experiencia laboral, conocimiento de las tecnolog\u00edas y espero aprobar",
+          "logo": "assets\/img\/logo.png",
+          "url": "assets\/anexos\/detalleProyecto.pdf"
+      },
+      "2": {
+          "nombre": "Servidor de libros digitales",
+              "comentario": "http:\/\/esto.es.facil.duckdns.com",
+              "detalle": "Servidor montado en mi casa, con una pc en desuso. Utilice windows como sistema operativo, Vertrigo como servidor.<\/p><p>Stacks : Apache - MySQL - PHP",
+              "logo": "assets\/img\/1.png",
+              "url": "http:\/\/esto.es.facil.duckdns.com\/e28483\/libros\/archivos.php"
+      }
+  }
+  
+}
