@@ -17,27 +17,24 @@
 
                 <div class="section-title">
                     <h2>Ingresar</h2>
-
                 </div>
+
+
+<form (formgroup)="credenciales" (ngsubmit)="validarCredencialess()">
+
                 <div class="row">
-
-
                     <div class="col-md-6 form-group">
-                        <input type="text" class="form-control" placeholder="Nombre" required>
+                        <input type="email" class="form-control" placeholder="Nombre" FormControlName="email" required>
                     </div>
                     <div class="col-md-6 form-group mt-3 mt-md-0">
-                        <input type="password" class="form-control" placeholder="Clave" required>
+                        <input type="password" class="form-control" placeholder="Clave" FormControlName="password" required>
                     </div>
                 </div>
 
                 <div class="my-3">
-
-                    <button class="btn btn-outline-secondary" routerLink="/register">Registrarme</button>
-
-                   
-                
+                    <button type="submit" class="btn btn-outline-secondary">Entrar</button>
                 </div>
-
+</form>
 
             </div>
 
