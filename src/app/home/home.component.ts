@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { PorfolioService } from '../servicios/porfolio.service';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
@@ -7,16 +7,7 @@ import { PorfolioService } from '../servicios/porfolio.service';
   styleUrls: ['./home.component.css']
 })
 
-export class HomeComponent implements OnInit {
-  constructor( private datosPorfolio : PorfolioService) {
+export class HomeComponent  {
 
-     // Called first time before the ngOnInit()
-  }
-
-  ngOnInit() {
-     // Called after the constructor and called  after the first ngOnChanges() 
-     this.datosPorfolio.obtenerDatos().subscribe( data => {
-      console.log(data);
-     });
-  }
+  
 }
