@@ -17,30 +17,21 @@
                     
                 </h4>
                 
-                <div class="resume-item">
-                    <h4>Google Activate</h4>
-                    <h5>Finalizado 2022</h5>
-                    <p>Desarrollo de APP Movile</p>
+                <div class="resume-item" *ngFor="let item of certificadosList">
+                    <h4>{{item.titulo}}</h4>
+                    <h5>{{item.finalizado}}</h5>
+                    <p>{{item.detalle}}</p>
                     <p>
                         <ul>
-                            <li><a href="assets/anexos/certificado google activate.pdf" target="_blank">Ver Certificado</a></li>
+                            <li><a href="{{item.url_1}}" target="_blank">{{item.detalle_1}}</a></li>
 
-                            <li><a href="https://learndigital.withgoogle.com/link/1nur091p2ww" target="_blank">Verifique la autenticidad del certificado - ID DE CERTIFICADO: W2K NTE S8F </a></li>
+                            <li><a href="{{item.url_2}}" target="_blank">{{item.detalle_2}}</a></li>
                         </ul>
                     
 
                 </div>
-                <div class="resume-item">
-                    <h4>Plan Argentina Programa</h4>
-                    <h5>Finalizado 2021</h5>
-                    <p>Primera etapa del plan</p>
-                    <p>
-                        <ul>
-                            <li><a href="assets/anexos/certificado_argentina_programa_2022.pdf" target="_blank">Ver Certificado</a></li>
-                        </ul>
-                   
 
-                </div>
+
             </div>
         </div>
     </div>

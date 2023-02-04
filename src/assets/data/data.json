@@ -23,45 +23,43 @@
           "Php": 75
       }
   },
-  "certificados": {
-          "1": {
+  "certificados": [
+           {
               "titulo": "Google Activate",
               "finalizo": "Finalizado 2022",
               "detalle": "Desarrollo de APP Movile",
-              "link": [{
-                      "url": "assets\/anexos\/certificado google activate.pdf",
-                      "detalle": "Ver Certificado"
-                  },
-                  {
-                      "url": "https:\/\/learndigital.withgoogle.com\/link\/1nur091p2ww",
-                      "detalle": "Verifique la autenticidad del certificado - ID DE CERTIFICADO: W2K NTE S8F "
-                  }]
+              "url_1": "assets\/anexos\/certificado google activate.pdf",
+              "detalle_1": "Ver Certificado",
+              "url_2": "https:\/\/learndigital.withgoogle.com\/link\/1nur091p2ww",
+              "detalle_2": "Verifique la autenticidad del certificado - ID DE CERTIFICADO: W2K NTE S8F "
+                 
           },
-          "2": {
+         {
               "titulo": "Plan Argentina Programa",
               "finalizo": "Finalizado 2021",
               "detalle": "Primera etapa del plan",
-              "link": [{
-                  "url": "assets\/anexos\/certificado_argentina_programa_2022.pdf",
-                  "detalle": "Ver Certificado"
-              }]
+              "url_1": "assets\/anexos\/certificado_argentina_programa_2022.pdf",
+              "detalle_1": "Ver Certificado",
+              "url_2": "",
+              "detalle_2": ""
+             
           }
-  },
-  "proyectos": {
-      "1": {
+        ],
+  "proyectos": [
+    {
           "nombre": "Portafolio",
           "comentario": "Detalle del proyecto",
-          "detalle": "Aplicaci\u00f3n web full stack, que mostrar\u00e1 mis datos personales, habilidades, estudios cursados, experiencia laboral, conocimiento de las tecnolog\u00edas y espero aprobar",
+          "detalle": "Aplicacion web full stack, que mostrar mis datos personales, habilidades, estudios cursados, experiencia laboral, conocimiento de las tecnologias y espero aprobar",
           "logo": "assets\/img\/logo.png",
           "url": "assets\/anexos\/detalleProyecto.pdf"
       },
-      "2": {
+      {
           "nombre": "Servidor de libros digitales",
-              "comentario": "http:\/\/esto.es.facil.duckdns.com",
-              "detalle": "Servidor montado en mi casa, con una pc en desuso. Utilice windows como sistema operativo, Vertrigo como servidor.<\/p><p>Stacks : Apache - MySQL - PHP",
-              "logo": "assets\/img\/1.png",
-              "url": "http:\/\/esto.es.facil.duckdns.com\/e28483\/libros\/archivos.php"
+          "comentario": "Mis libros en PDF, resumenes, ...",
+          "detalle": "Servidor montado en mi casa, con una pc en desuso. Utilice windows como sistema operativo, Vertrigo como servidor.<\/p><p>Stacks : Apache - MySQL - PHP",
+          "logo": "assets\/img\/1.png",
+          "url": "http:\/\/esto.es.facil.duckdns.com\/e28483\/libros\/archivos.php"
       }
-  }
+    ]
   
 }
