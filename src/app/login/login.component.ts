@@ -1,22 +1,23 @@
-import { Component } from '@angular/core';
-import {FormGroup, FormControl} from '@angular/forms'
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { AuthService } from "../servicios/auth.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"]
 })
 export class LoginComponent {
 
-  credenciales = new FormGroup({
-    email : new FormControl,
-    password : new FormControl
+  constructor(private authd : AuthService, public router: Router) {}
 
-  });
+  ngOnInit(): void{
 
-  validarCredencialess(){
+    const userData={
+      username: "denisagustina@hotmail.com",
+      password: "yoprogramo1"
+    }
 
-      console.log("llego algo");
+    this.authd.login(userData).subscribe(res => console.log(res));
   }
-
 }
