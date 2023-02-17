@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../servicios/auth.service'
 
 
 @Component({
@@ -8,6 +9,11 @@ import { Component } from '@angular/core';
 })
 
 export class HomeComponent  {
+
+  isAdmin = this.admin.loggedIn; 
+
+  constructor( private admin : AuthService ){
+  }
 
   
 }
