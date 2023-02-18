@@ -10,8 +10,7 @@ import { AuthService } from '../servicios/auth.service'
 
 export class HomeComponent  {
 
-  isAdmin = this.admin.loggedIn; 
-
+  
   constructor( private admin : AuthService ){
   }
 

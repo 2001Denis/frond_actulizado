@@ -7,14 +7,12 @@ import { AuthService } from '../../servicios/auth.service'
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
-  isAdmin = this.admin.loggedIn;
   
-
-  salir (){
-    this.admin.logout;
-  }
+  isAdmin: boolean = true;
 
   constructor( private admin : AuthService ){  }
-
+  
+  salir (){  
+    this.admin.logout;
+  }
 }

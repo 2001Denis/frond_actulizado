@@ -1,17 +1,10 @@
 
 
-<app-perfil *ngIf="!isAdmin"></app-perfil>
-<app-update-perfil *ngIf="isAdmin"></app-update-perfil>
+<app-perfil></app-perfil>
+<app-habilidades></app-habilidades>
+<app-certificados></app-certificados>
+<app-proyectos></app-proyectos>
 
-<app-habilidades *ngIf="!isAdmin"></app-habilidades>
-<app-update-habilidad *ngIf="isAdmin"></app-update-habilidad>
-
-<app-certificados  *ngIf="!isAdmin"></app-certificados>
-<app-update-certificado *ngIf="isAdmin"></app-update-certificado>
-
-<app-proyectos  *ngIf="!isAdmin"></app-proyectos>
-<app-update-proyecto *ngIf="isAdmin"></app-update-proyecto>
-
-<app-footer  *ngIf="!isAdmin"></app-footer>
+<app-footer></app-footer>
 
 

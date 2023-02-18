@@ -1,6 +1,4 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { FormBuilder } from "@angular/forms";
+import { Component } from "@angular/core";
 import { AuthService } from "../servicios/auth.service";
 
 @Component({
@@ -8,23 +6,19 @@ import { AuthService } from "../servicios/auth.service";
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"]
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent {
  
-  
 
-  constructor(
-    private authd : AuthService, 
-    public router: Router, 
-    private formB : FormBuilder
-    ) {}
+   form: any = {
+    username: null,
+    password: null
+  };
 
-  ngOnInit(): void{
+  constructor( public auth : AuthService ) {}
+ 
+  Entrar( ){
 
-    const userData={
-      username: "denisagustina@hotmail.com",
-      password: "yoprogramo"
-    }
-
-    this.authd.login(userData).subscribe(res => console.log(res));
+     this.auth.login(this.form).subscribe ( res => console.log(res));
+   
   }
 }

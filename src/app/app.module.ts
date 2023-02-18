@@ -11,9 +11,8 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdatePerfilComponent } from './componentes/update-perfil/update-perfil.component';
 import { UpdateCertificadoComponent } from './componentes/update-certificado/update-certificado.component';
@@ -21,6 +20,7 @@ import { UpdateHabilidadComponent } from './componentes/update-habilidad/update-
 import { UpdateProyectoComponent } from './componentes/update-proyecto/update-proyecto.component';
 import { AltaCertificadoComponent } from './componentes/alta-certificado/alta-certificado.component';
 import { AltaProyectoComponent } from './componentes/alta-proyecto/alta-proyecto.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -34,13 +34,13 @@ import { AltaProyectoComponent } from './componentes/alta-proyecto/alta-proyecto
     HabilidadesComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent,
     UpdatePerfilComponent,
     UpdateCertificadoComponent,
     UpdateHabilidadComponent,
     UpdateProyectoComponent,
     AltaCertificadoComponent,
-    AltaProyectoComponent
+    AltaProyectoComponent,
+    AdminComponent,
 
   ],
   imports: [
@@ -48,7 +48,8 @@ import { AltaProyectoComponent } from './componentes/alta-proyecto/alta-proyecto
     AppRoutingModule,
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
