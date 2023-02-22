@@ -1,12 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { User, UserResponse } from '../interfaces/user.interface';
 import { catchError, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { JwtHelperService } from '@auth0/angular-jwt';
-
-const vto = new JwtHelperService();
 
 @Injectable({
   providedIn: 'root'
@@ -23,33 +20,24 @@ export class AuthService {
       .pipe(
         map((res: UserResponse) => {
           localStorage.setItem('token', res.token);
+          localStorage.setItem('expira', " 1 hora");
           this.router.navigate(['/admin']);
           return res;
         }),
-        catchError((err) => this.Error(err))
+        catchError((err) => this.ErrorLogin(err))
       );
   }
 
-  logout(): void {
-    localStorage.removeItem('token');
-    this.router.navigate(['/home']);
-  }
-
-  private Error(err:any): Observable<never> {
+   private ErrorLogin(err:any): Observable<never> {
     let errorMessage = '';
-    if (err) {  errorMessage = 'Credenciales no validas';  }
-    window.alert(errorMessage);
+    if (err) {  errorMessage = err.status }
     this.router.navigate(['/login']);
     return throwError(errorMessage);
   }
 
-  private checkToken(): void {
-    const userToken = localStorage.getItem('token');
-    const isExpired = vto.isTokenExpired(userToken);
-    if (isExpired) { this.logout(); }
-  }
 
-
+  
+ 
 }
 
 

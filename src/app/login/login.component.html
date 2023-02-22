@@ -27,7 +27,7 @@
                         [(ngModel)]="form.username"
                         class="form-control" 
                         placeholder="denisagustina@hotmail.com" 
-                        required>
+                        required ="required">
                     </div>
                 </div>
                 <div class="row my-3">
@@ -46,6 +46,12 @@
                     <button type="submit" (click)="Entrar()" class="btn btn-outline-secondary">Entrar</button>
                 </div>
             </form>
+
+            <div class="form-group">
+                <div *ngIf="error" class="alert alert-danger" role="alert">
+                   {{ errorMessage }}
+                </div>
+              </div>
 
             </div>
 

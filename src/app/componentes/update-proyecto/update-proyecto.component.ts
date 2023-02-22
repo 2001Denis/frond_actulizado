@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { PorfolioService } from '../../servicios/porfolio.service';
 
 @Component({
@@ -9,6 +9,9 @@ import { PorfolioService } from '../../servicios/porfolio.service';
 export class UpdateProyectoComponent implements OnInit{
 
   proyectosList : any;
+
+  // pasar al hijo - modificar este proyecto
+  
 
   constructor(private datosPorfolio: PorfolioService){}
 

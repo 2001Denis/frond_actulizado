@@ -9,16 +9,24 @@ import { AuthService } from "../servicios/auth.service";
 export class LoginComponent {
  
 
-   form: any = {
-    username: null,
-    password: null
-  };
-
+  form: any = { username: null, password: null  };
+  errorMessage : string = "";
+  error : boolean = false;
+  
   constructor( public auth : AuthService ) {}
  
   Entrar( ){
 
-     this.auth.login(this.form).subscribe ( res => console.log(res));
-   
-  }
+     this.auth.login(this.form).subscribe({
+      next: data => {
+        // window.location.reload();
+      },
+      error: err => {
+        this.errorMessage = "Credenciales incorrectas. Vuelva a internerlo.";
+        this.error = true;
+      }
+    });
+ }
+
+
 }
