@@ -19,6 +19,7 @@ export class AuthService {
       .post<UserResponse>(`http://localhost:3000/auth/login`, authData)
       .pipe(
         map((res: UserResponse) => {
+          console.log(res);
           localStorage.setItem('token', res.token);
           localStorage.setItem('expira', " 1 hora");
           this.router.navigate(['/admin']);

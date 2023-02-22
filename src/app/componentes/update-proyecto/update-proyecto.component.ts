@@ -1,5 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { PorfolioService } from '../../servicios/porfolio.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-update-proyecto',
@@ -10,20 +11,25 @@ export class UpdateProyectoComponent implements OnInit{
 
   proyectosList : any;
 
-  // pasar al hijo - modificar este proyecto
+   @ViewChild("myModalConf", {static: false}) myModalConf: TemplateRef<any> | undefined;
   
 
-  constructor(private datosPorfolio: PorfolioService){}
+  constructor(private datosPorfolio: PorfolioService, private modalService: NgbModal){}
 
   ngOnInit() {
-    
-    this.datosPorfolio.obtenerDatos().subscribe( data => {
-     
-      this.proyectosList = data.proyectos;
-    
-    });
- 
-
+     this.datosPorfolio.obtenerDatos().subscribe( data => {
+          this.proyectosList = data.proyectos;
+     });
   }
+ 
+  mostrarModalConf(){
+    this.modalService.open(this.myModalConf).result.then( r => {
+      console.log("Tu respuesta ha sido: " + r);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+
 
 }
