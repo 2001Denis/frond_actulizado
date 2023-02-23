@@ -56,9 +56,9 @@
       {
           "nombre": "Servidor de libros digitales",
           "comentario": "Mis libros en PDF, resumenes, ...",
-          "detalle": "Servidor montado en mi casa, con una pc en desuso. Utilice windows como sistema operativo, Vertrigo como servidor.<\/p><p>Stacks : Apache - MySQL - PHP",
+          "detalle": "Servidor montado en mi casa, con una pc en desuso. Utilice windows como sistema operativo, Vertrigo como servidor. Stacks : Apache - MySQL - PHP",
           "logo": "assets\/img\/1.png",
-          "url": "http:\/\/esto.es.facil.duckdns.com\/e28483\/libros\/archivos.php"
+           "url": "http:\/\/esto.es.facil.duckdns.com\/e28483\/libros\/archivos.php"
       }
     ]
   
