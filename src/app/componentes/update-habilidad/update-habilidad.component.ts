@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PorfolioService } from '../../servicios/porfolio.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -8,6 +9,8 @@ import { PorfolioService } from '../../servicios/porfolio.service';
   styleUrls: ['./update-habilidad.component.css']
 })
 export class UpdateHabilidadComponent implements OnInit {
+  
+  item : any;
   concepto : any;
   valor1 : any;
   valor2 : any;
@@ -18,7 +21,7 @@ export class UpdateHabilidadComponent implements OnInit {
   valor7 : any;
   valor8 : any;
 
-  constructor( private datosPorfolio: PorfolioService ){  }
+  constructor( private datosPorfolio: PorfolioService, private modalService: NgbModal ){  }
 
   ngOnInit() {
     
@@ -34,10 +37,12 @@ export class UpdateHabilidadComponent implements OnInit {
         this.valor6 = String(data.habilidades.BackEnd.SpringBoot);
         this.valor7 = String(data.habilidades.BackEnd.Mysql);
         this.valor8 = String(data.habilidades.BackEnd.Php);
-
- 
-  });
-   
-
+        });
   }
+
+  mostrarModal( data: any, modalProyecto: any ){
+    this.item = data;
+    this.modalService.open(modalProyecto);
+  }
+
 }

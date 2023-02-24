@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PorfolioService } from '../../servicios/porfolio.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-update-perfil',
@@ -8,6 +9,7 @@ import { PorfolioService } from '../../servicios/porfolio.service';
 })
 export class UpdatePerfilComponent implements OnInit{
   
+  item : any;
   correo : any;
   celular : any;
   ciudad : any;
@@ -15,7 +17,7 @@ export class UpdatePerfilComponent implements OnInit{
   ocupacion : any;
   trabajo : any;
 
-  constructor( private datosPorfolio : PorfolioService) {  }
+  constructor( private datosPorfolio : PorfolioService, private modalService: NgbModal) {  }
 
   ngOnInit() {
     
@@ -29,5 +31,10 @@ export class UpdatePerfilComponent implements OnInit{
       this.trabajo = data.perfil.trabajo;
 
      });
+  }
+
+  mostrarModal( data: any, modalProyecto: any ){
+    this.item = data;
+    this.modalService.open(modalProyecto);
   }
 }

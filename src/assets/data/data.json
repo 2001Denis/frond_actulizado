@@ -26,7 +26,7 @@
   "certificados": [
            {
               "titulo": "Google Activate",
-              "finalizo": "Finalizado 2022",
+              "finalizo": 2022,
               "detalle": "Desarrollo de APP Movile",
               "url_1": "assets\/anexos\/certificado google activate.pdf",
               "detalle_1": "Ver Certificado",
@@ -36,7 +36,7 @@
           },
          {
               "titulo": "Plan Argentina Programa",
-              "finalizo": "Finalizado 2021",
+              "finalizo": 2021,
               "detalle": "Primera etapa del plan",
               "url_1": "assets\/anexos\/certificado_argentina_programa_2022.pdf",
               "detalle_1": "Ver Certificado",
