@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../servicios/auth.service'
+import { Router } from '@angular/router';
+import { AuthService } from '../servicios/auth.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+const vto = new JwtHelperService();
 
 
 @Component({
@@ -11,7 +15,19 @@ import { AuthService } from '../servicios/auth.service'
 export class HomeComponent  {
 
   
-  constructor( private admin : AuthService ){
+  logeado : string = "Desde home";
+  isLogged : boolean;
+  
+
+  constructor( private admin : AuthService, private router: Router ){
+
+    const userToken = localStorage.getItem('token');
+    const isExpired = vto.isTokenExpired(userToken);
+    if (isExpired) {  
+      this.isLogged = false;
+    }else{
+      this.isLogged = true;
+    }
   }
 
   

@@ -8,14 +8,16 @@
             <a  routerLink="/home" class="logo"><img src="assets/img/yo.bmp" alt="" class="img-fluid"></a>
         </h1>
 
+<h4> {{isLogged}}</h4>
+
        <div class="header-social-links" >
             <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
             <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
             <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
 
-            <a href="" routerLink="/login"  class="linkedin" ><i class="filter-web"></i>Entrar</a>
-            <a href="" routerLink="/home"   class="linkedin" ><i class="filter-web"></i>Salir</a>
+            <a href="" routerLink="/login" *ngIf="!isLogged" class="linkedin" ><i class="filter-web"></i>Entrar</a>
+            <a href="" (onClick)="salir()" *ngIf="isLogged"  class="linkedin" ><i class="filter-web"></i>Salir</a>
          
         </div>
 

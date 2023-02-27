@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PorfolioService } from '../../servicios/porfolio.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-perfil',
@@ -8,27 +9,23 @@ import { PorfolioService } from '../../servicios/porfolio.service';
 })
 export class PerfilComponent implements OnInit{
 
-  correo : any;
-  celular : any;
-  ciudad : any;
-  edad : any;
-  ocupacion : any;
-  trabajo : any;
+  item : any;
+  perfil : any;
 
-  constructor( private datosPorfolio : PorfolioService) {  }
+  @Input()
+   isLogged : boolean | undefined;
+
+  constructor( private datosPorfolio : PorfolioService, private modalService: NgbModal) {  }
 
   ngOnInit() {
-    
      this.datosPorfolio.obtenerDatos().subscribe( data => {
-     
-      this.correo = data.perfil.correo;
-      this.celular = data.perfil.celular;
-      this.ciudad = data.perfil.ciudad;
-      this.edad = data.perfil.edad;
-      this.ocupacion = data.perfil.ocupacion;
-      this.trabajo = data.perfil.trabajo;
-
+     this.perfil = data.perfil;
      });
+  }
+
+  mostrarModal( data: any, modalProyecto: any ){
+    this.item = data;
+    this.modalService.open(modalProyecto);
   }
 
 }

@@ -1,25 +1,23 @@
-<!-- ======= Mis Certificaciones ======= -->
+<!-- =======Update Mis Certificaciones ======= -->
 
-<section id="resume" class="resume">
-    <div class="container" data-aos="fade-up">
+<section id="resume " class="resume ">
+    <div class="container " data-aos="fade-up ">
 
-        <div class="section-title">
-            <h2>Mis Certificaciones </h2>
-            <p class="fst-italic">
-                " Cuando quieres realmente una cosa, todo el Universo conspira para ayudarte a conseguirla".
-                <small> - Paulo Coelho</small>
-            </p>
-
+        <div class="section-title ">
+            <h2>Mis Certificaciones</h2>
+            <i  *ngIf="isLogged" class="bi bi-plus-square" (click)="mostrarModal(item, modalNuevoCertificado )"></i>
         </div>
+    
         <div class="row">
             <div class="col-lg-12">
-                <h4 class="resume-title">
-                    
-                </h4>
-                
+                  
                 <div class="resume-item" *ngFor="let item of certificadosList">
-                    <h4>{{item.titulo}}</h4>
-                    <h5>{{item.finalizado}}</h5>
+                    <h4>{{item.titulo}}
+                        <i  *ngIf="isLogged" class="bi bi-x-square" (click)="mostrarModalEliminar(item, modalCertificadoEliminar )" ></i>
+                        <i  *ngIf="isLogged" class="bi bi-pencil-square" (click)="mostrarModal(item, modalCertificadoUpdate )"></i>
+
+                    </h4>
+                    <h5>Finalizado {{item.finalizo}}</h5>
                     <p>{{item.detalle}}</p>
                     <p>
                         <ul>
@@ -27,14 +25,141 @@
 
                             <li><a href="{{item.url_2}}" target="_blank">{{item.detalle_2}}</a></li>
                         </ul>
-                    
-
+                        
                 </div>
-
-
             </div>
         </div>
-    </div>
+      
+     </div>
 </section>
-
 <!-- End Mis Certificaciones -->
+
+
+
+<!-- Modal para modificar -->
+<ng-template #modalCertificadoUpdate let-modal>
+    <div class="modal-content">
+   
+        <div class="modal-header">
+            <h5 class="modal-title">Actualizar {{item.nombre}}</h5>
+            <button type="button" class="btn" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cerrado desde la ventana')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        
+                <div  class="resume-item">
+                    <small>Titulo</small>
+                    <input type="text" class="form-control sinborde" value={{item.nombre}} >
+                </div>   
+                <p>   
+                <div class="resume-item">
+                    <small> Comentario</small>
+                    <input type="text" class="form-control sinborde" value={{item.comentario}}>
+                </div>                 
+                <p>        
+                <div class="resume-item">
+                    <small>Detalle</small>
+                    <input type="text" class="form-control sinborde" value={{item.detalle}}>
+                </div>
+                <p>
+                <div class="resume-item">
+                    <small>Link</small>
+                    <input type="url" class="form-control sinborde" value={{item.url}}>
+                </div>
+                <p>
+                    <div class="resume-item">
+                        <small>Seleccione un logo</small>
+                        <p>
+                        <div>
+                            <img src="assets/img/1.png ">
+                            <img src="assets/img/1.png ">
+                            <img src="assets/img/1.png ">
+                            <img src="assets/img/1.png ">
+                            <img src="assets/img/1.png ">
+                            <img src="assets/img/1.png ">
+                                     
+                        </div>
+                    </div>
+        </div>
+        
+        <div class="modal-footer">
+
+            <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Si')">Guardar los cambios</button>
+        </div>
+
+    </div>
+</ng-template>
+
+
+
+<!-- Modal para confirmar Eliminar -->
+<ng-template #modalCertificadoEliminar let-modal>
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">Eliminar {{item.nombre}}</h5>
+        <button type="button" class="btn" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cerrado desde la ventana')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        ¿Quieres continuar? 
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modal.close('No')">No</button>
+        <button type="button" class="btn btn-primary" (click)="modal.close('Si')">Si</button>
+    </div>
+    </div>
+</ng-template>
+
+
+
+
+<!-- Modal para nuevo certificado -->
+<ng-template #modalNuevoCertificado let-modal>
+    <div class="modal-content">
+   
+        <div class="modal-header">
+            <h5 class="modal-title">Agrgar un nuevo certificado</h5>
+            <button type="button" class="btn" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cerrado desde la ventana')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        
+                <div  class="resume-item">
+                    <small>Titulo</small>
+                    <input type="text" class="form-control sinborde" 
+                    placeholder="Ingrese un Titulo para el nuevo proyecto" 
+                     >
+                </div>   
+                <p>   
+                <div class="resume-item">
+                    <small> Comentario</small>
+                    <input type="text" class="form-control sinborde" 
+                    placeholder="Ingrese un comentario para el nuevo proyecto"
+                    >
+                </div>                 
+                <p>        
+                <div class="resume-item">
+                    <small>Detalle</small>
+                    <input type="text" class="form-control sinborde" 
+                    placeholder="Ingrese un detalle para el nuevo proyecto" 
+                    >
+                </div>
+                <p>
+                <div class="resume-item">
+                    <small>Link</small>
+                    <input type="url" class="form-control sinborde"
+                    placeholder="Ingrese URL para el nuevo proyecto"
+                     >
+                </div>
+             </div>
+        
+        <div class="modal-footer">
+          
+            <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Si')">Guardar nuevo proyecto</button>
+        </div>
+
+    </div>
+</ng-template>

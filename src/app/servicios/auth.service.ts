@@ -5,6 +5,7 @@ import { User, UserResponse } from '../interfaces/user.interface';
 import { catchError, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +23,7 @@ export class AuthService {
           console.log(res);
           localStorage.setItem('token', res.token);
           localStorage.setItem('expira', " 1 hora");
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/']);
           return res;
         }),
         catchError((err) => this.ErrorLogin(err))

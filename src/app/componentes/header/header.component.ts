@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
@@ -12,8 +12,17 @@ const vto = new JwtHelperService();
 export class HeaderComponent {
 
    isExpired : boolean;
+   mensaje : any;
+
+   @Input()
+   isLogged : boolean | undefined;
+   logeado : string | undefined;
+
+  
+
 
    constructor( private router: Router ){ 
+
 
     const userToken = localStorage.getItem('token');
     this.isExpired = vto.isTokenExpired(userToken);
@@ -24,6 +33,9 @@ export class HeaderComponent {
     }
    
 
+    salir(){
+      this.isLogged = false;
+    }
      
 
 }
