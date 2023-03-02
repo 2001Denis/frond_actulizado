@@ -2,15 +2,26 @@
 
 <section id="resume " class="resume ">
     <div class="container " data-aos="fade-up ">
-        <div class="section-title ">
+
+
+        <div class="section-title">
             <h2>Mis Proyectos</h2>
-            <i  *ngIf="isLogged" class="bi bi-plus-square" (click)="mostrarModal(item, modalNuevoProyecto )"></i>
-           
+         
+            <p class="fst-italic">
+                " Empieza haciendo lo necesario, después lo posible, y de repente te encontrarás haciendo lo imposible.".
+                <p>
+                    <small> - San Francisco de Asís</small>
+                </p>
+                <i  *ngIf="isLogged" class="bi bi-plus-square" (click)="mostrarModal(item, modalNuevoProyecto )"></i>
+     
+
         </div>
-   
+
+
+
+
         <div class="row">
             <div class="col-lg-12">
-
               <div *ngFor="let item of proyectosList">
 
                     <div class="resume-item pb-0">
@@ -26,15 +37,9 @@
                         <ul>
                             <li><a href="{{item.url}}"  target="_blank">Detalle del proyecto</a></li>
                         </ul>
-                        
-            
-                    
-                </div>
+                    </div>
 
-            </div>
-               
-                              
-            
+              </div>
             </div>
         </div>
     </div>
@@ -91,7 +96,6 @@
         </div>
         
         <div class="modal-footer">
-
             <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Si')">Guardar los cambios</button>
         </div>
 
@@ -172,14 +176,11 @@
                         <img src="assets/img/1.png ">
                         <img src="assets/img/1.png ">
                         <img src="assets/img/1.png ">
-                                 
                     </div>
                 </div>
 
         </div>
-        
         <div class="modal-footer">
-          
             <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Si')">Guardar nuevo proyecto</button>
         </div>
 

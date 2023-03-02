@@ -37,26 +37,26 @@
                         <div class="col-lg-6 ">
                             <ul>
                                 <li><i class="bi bi-rounded-right "></i> <strong>Correo:</strong>
-                                    <input type="text" id="email" class="sinborde" value={{perfil.correo}} maxlength="30">
+                                    {{perfil.correo}}
                                 </li>
                                 <li><i class="bi bi-rounded-right "></i> <strong>Celular:</strong>
-                                    <input type="text" id="celular" class="sinborde" value={{perfil.celular}}>
+                                    {{perfil.celular}}
                                 </li>
                                 <li><i class="bi bi-rounded-right "></i> <strong>Ciudad:</strong>
-                                    <input type="text" id="ciudad" class="sinborde" value={{perfil.ciudad}}>
+                                    {{perfil.ciudad}}
                                 </li>
                             </ul>
                         </div>
                         <div class="col-lg-6 ">
                             <ul>
-                                <li><i class="bi bi-rounded-right "></i> <strong>Naciento:</strong>
-                                    <input type="txt" id="Edad" class="sinborde" value={{perfil.edad}}>
+                                <li><i class="bi bi-rounded-right "></i> <strong>Edad:</strong>
+                                    {{perfil.edad}}
                                 </li>
                                 <li><i class="bi bi-rounded-right "></i> <strong>Ocupacion:</strong>
-                                    <input type="text" id="ocupacion" class="sinborde" value={{perfil.ocupacion}}>
+                                    {{perfil.ocupacion}}
                                 </li>
                                 <li><i class="bi bi-rounded-right "></i> <strong>Tele-trabajo:</strong>
-                                    <input type="text" id="disponibilidad" class="sinborde" value={{perfil.trabajo}}>
+                                    {{perfil.trabajo}}
                                 </li>
                             </ul>
                         </div>
@@ -72,25 +72,68 @@
         </div>
     </section>
     <!-- End Mi Perfil -->
+
+
+
+
+
+
 <!-- Modal para modificar -->
 <ng-template #modalPerfilUpdate let-modal>
+   
+   <form  (ngSubmit)="save()">
+
     <div class="modal-content">
    
         <div class="modal-header">
-            <h5 class="modal-title">Actualizar</h5>
+            <h5 class="modal-title">Actualizar mi Perfil</h5>
             <button type="button" class="btn" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cerrado desde la ventana')">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
         
-
+            <div  class="resume-item">
+                <small>Correo:</small>
+                <input [(ngModel)]="perfil.correo" name ="correo" type="text"  class="form-control sinborde">
+            </div>   
+            <p>   
+            <div class="resume-item">
+                <small> Celular:</small>
+                <input [(ngModel)]="perfil.celular" name ="celular" type="text"  class="form-control sinborde">
+            </div>                 
+            <p>        
+            <div class="resume-item">
+                <small>Ciudad:</small>
+                <input [(ngModel)]="perfil.ciudad" name ="ciudad" type="text"  class="form-control sinborde">
+                          
+            </div>
+            <p>
+            <div class="resume-item">
+                <small>Año de nacimiento: </small>
+                <input [(ngModel)]="perfil.edad" name ="edad"  class="form-control sinborde">
+            </div>
+            <p>
+                <div class="resume-item">
+                    <small>Ocupacion</small>
+                    <input [(ngModel)]="perfil.ocupacion" name ="ocupacion"  class="form-control sinborde">
+                                  </div>
+            <p>
+                <div class="resume-item">
+                    <small>Tele-trabajo:</small>
+                    <input [(ngModel)]="perfil.trabajo" name ="trabajo"   class="form-control sinborde">
+                </div>
+            <p>
+                <div class="resume-item">
+                    <small>Detalle de las tecnoclogias utilizadas:</small>
+                    <textarea [(ngModel)]="perfil.conceptos" name ="conceptos" rows="5" class="form-control sinborde">
+                    {{perfil.conceptos}}</textarea>    
+                </div>
         </div>
-        
         <div class="modal-footer">
-
-            <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Si')">Guardar los cambios</button>
+            <button type="submit" class="btn btn-outline-secondary">Guardar los cambios</button>
         </div>
 
     </div>
+    </form>
 </ng-template>

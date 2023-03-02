@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
-import { JwtHelperService } from '@auth0/angular-jwt';
-
-const vto = new JwtHelperService();
+import { window } from 'rxjs';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,32 +8,19 @@ const vto = new JwtHelperService();
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
-   isExpired : boolean;
-   mensaje : any;
-
+   
    @Input()
    isLogged : boolean | undefined;
-   logeado : string | undefined;
-
   
-
-
-   constructor( private router: Router ){ 
-
-
-    const userToken = localStorage.getItem('token');
-    this.isExpired = vto.isTokenExpired(userToken);
-
-    //<a href="" routerLink="/login" *ngIf="isExpired" class="linkedin" ><i class="filter-web"></i>Entrar</a>
-   // <a href="" routerLink="/home"  *ngIf="!isExpired" class="linkedin" ><i class="filter-web"></i>Salir</a>
-
-    }
+   constructor(private auth : AuthService){ 
    
-
-    salir(){
-      this.isLogged = false;
     }
-     
+ 
+   public salir():void{
 
+    window(this.auth.isLogged);
+    console.log("fggffgfgfgfgfgfgfgfgfgf");
+     this.auth.logout;
+   }
+   
 }

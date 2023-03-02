@@ -3,25 +3,25 @@
       "correo": "denisagustina@hotmail.com",
       "celular": "+54 291 456 7890",
       "ciudad": "Bahia Blanca, Bs.As, Argentina",
-      "edad": 2001,
+      "edad": "28/2/2003",
       "ocupacion": "Estudiante Univertitario",
-      "trabajo": "Disponible"
+      "trabajo": "Disponible",
+      "conceptos": "Conceptos y herramientas que utilizare : BackEnd, FrondEnd, DevOps, Testing, Seguridad Web ( JWT ), comunicacion efectiva, Api Rest, Scrum, Mvc, Control de versiones Git, GitHub, Uml, Firebase, Heroku, Heroku Add On, entre otras."
+    
+
   },
   "habilidades": {
 
-      "conceptos": "Conceptos y herramientas que utilizare : BackEnd, FrondEnd, DevOps, Testing, Seguridad Web ( JWT ), comunicacion efectiva, Api Rest, Scrum, Mvc, Contro de versiones Git, GitHub, Uml, Firebase, Heroku, Heroku Add On, entre otras.",
-      "FrondEnd": {
-          "Angular": 0,
-          "TypeScript": 0,
-          "HTML": 75,
-          "CSS": 30,
-          "JavaScript": 80
-      },
-      "BackEnd": {
-          "SpringBoot": 0,
-          "Mysql": 70,
-          "Php": 75
-      }
+          "angular": 0,
+          "typeScript": 0,
+          "html": 75,
+          "css": 30,
+          "javaScript": 80,
+          "springBoot": 10,
+          "mysql": 70,
+          "php": 75,
+          "java": 75
+      
   },
   "certificados": [
            {
@@ -32,7 +32,7 @@
               "detalle_1": "Ver Certificado",
               "url_2": "https:\/\/learndigital.withgoogle.com\/link\/1nur091p2ww",
               "detalle_2": "Verifique la autenticidad del certificado - ID DE CERTIFICADO: W2K NTE S8F "
-                 
+      
           },
          {
               "titulo": "Plan Argentina Programa",

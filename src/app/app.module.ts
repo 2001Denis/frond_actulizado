@@ -14,14 +14,6 @@ import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { UpdatePerfilComponent } from './componentes/update-perfil/update-perfil.component';
-import { UpdateCertificadoComponent } from './componentes/update-certificado/update-certificado.component';
-import { UpdateHabilidadComponent } from './componentes/update-habilidad/update-habilidad.component';
-import { UpdateProyectoComponent } from './componentes/update-proyecto/update-proyecto.component';
-import { AltaCertificadoComponent } from './componentes/alta-certificado/alta-certificado.component';
-import { AltaProyectoComponent } from './componentes/alta-proyecto/alta-proyecto.component';
-import { AdminComponent } from './admin/admin.component';
-
 
 @NgModule({
   declarations: [
@@ -33,14 +25,7 @@ import { AdminComponent } from './admin/admin.component';
     ProyectosComponent,
     HabilidadesComponent,
     HomeComponent,
-    LoginComponent,
-    UpdatePerfilComponent,
-    UpdateCertificadoComponent,
-    UpdateHabilidadComponent,
-    UpdateProyectoComponent,
-    AltaCertificadoComponent,
-    AltaProyectoComponent,
-    AdminComponent,
+    LoginComponent
 
   ],
   imports: [

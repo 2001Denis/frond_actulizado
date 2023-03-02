@@ -4,11 +4,12 @@
 
         <div class="section-title">
             <h2>Mis Habilidades</h2>
+            <i  *ngIf="isLogged" class="bi bi-pencil-square" (click)="mostrarModal(item, modalHabilidadesUpdate )"></i>
         </div>
 
         <div class="row skills-content">
             <div class="section-title">
-                <p> {{concepto}} </p>
+                <p>{{conceptos}} </p>
 
             </div>
 
@@ -17,8 +18,53 @@
             <div class="col-lg-6">
                 <h4>Frond End</h4>
 
+                 <div class="progress">
+                    <span class="skill" >HTML <i class="val">{{habilidades.html}}  %</i></span>
+                    <div class="progress-bar-wrap">
+                        <ngb-progressbar  
+                        [value]="75" 
+                        [striped]="false" 
+                        [animated]="true" >
+                    </ngb-progressbar>
+                    </div>
+                </div>
+
                 <div class="progress">
-                    <span class="skill">Angular <i class="val">{{valor1}}%</i></span>
+                    <span class="skill">CSS <i class="val">{{habilidades.css}}  %</i></span>
+                    <div class="progress-bar-wrap">
+                        <ngb-progressbar  
+                        [value]="75" 
+                        [striped]="false" 
+                        [animated]="true" >
+                    </ngb-progressbar>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">JavaScript <i class="val">{{habilidades.javaScript}}  %</i></span>
+                    <div class="progress-bar-wrap">
+                        <ngb-progressbar  
+                        [value]="75" 
+                        [striped]="false" 
+                        [animated]="true" >
+                    </ngb-progressbar>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">TypeScript <i class="val">{{habilidades.typeScript}}  %</i></span>
+                    <div class="progress-bar-wrap">
+                        <ngb-progressbar  
+                        [value]="75" 
+                        [striped]="false" 
+                        [animated]="true" >
+                    </ngb-progressbar>
+                    </div>
+                </div>
+
+
+                <div class="progress">
+                    <span class="skill">Angular <i class="val">{{habilidades.angular}}  %</i></span>
                     <div class="progress-bar-wrap">
                         <ngb-progressbar  
                         [value]=7
@@ -28,66 +74,15 @@
                     </div>
                 </div>
 
-                <div class="progress">
-                    <span class="skill">TypeScript <i class="val">{{valor2}}%</i></span>
-                    <div class="progress-bar-wrap">
-                        <ngb-progressbar  
-                        [value]="75" 
-                        [striped]="false" 
-                        [animated]="true" >
-                    </ngb-progressbar>
-                    </div>
-                </div>
-
-                <div class="progress">
-                    <span class="skill" >HTML <i class="val">{{valor3}}%</i></span>
-                    <div class="progress-bar-wrap">
-                        <ngb-progressbar  
-                        [value]="75" 
-                        [striped]="false" 
-                        [animated]="true" >
-                    </ngb-progressbar>
-                    </div>
-                </div>
-
-                <div class="progress">
-                    <span class="skill">CSS <i class="val">{{valor4}}%</i></span>
-                    <div class="progress-bar-wrap">
-                        <ngb-progressbar  
-                        [value]="75" 
-                        [striped]="false" 
-                        [animated]="true" >
-                    </ngb-progressbar>
-                    </div>
-                </div>
-
-                <div class="progress">
-                    <span class="skill">JavaScript <i class="val">{{valor5}}%</i></span>
-                    <div class="progress-bar-wrap">
-                        <ngb-progressbar  
-                        [value]="75" 
-                        [striped]="false" 
-                        [animated]="true" >
-                    </ngb-progressbar>
-                    </div>
-                </div>
             </div>
+
+
 
             <div class="col-lg-6">
                 <h4>Back End</h4>
+   
                 <div class="progress">
-                    <span class="skill">SpringBoot <i class="val">{{valor6}}%</i></span>
-                    <div class="progress-bar-wrap">
-                        <ngb-progressbar  
-                        [value]="75" 
-                        [striped]="false" 
-                        [animated]="true" >
-                    </ngb-progressbar>
-                    </div>
-                </div>
-
-                <div class="progress">
-                    <span class="skill">Mysql <i class="val">{{valor7}}%</i></span>
+                    <span class="skill">Mysql <i class="val">{{habilidades.mysql}}  %</i></span>
                     <div class="progress-bar-wrap">
                     <ngb-progressbar  
                         [value]="75" 
@@ -99,7 +94,7 @@
                 </div>
 
                 <div class="progress">
-                    <span class="skill">Php <i class="val">{{valor8}}%</i></span>
+                    <span class="skill">Php <i class="val">{{habilidades.php}}  %</i></span>
                     <div class="progress-bar-wrap">
                         <ngb-progressbar  
                             [value]="75" 
@@ -108,6 +103,29 @@
                         </ngb-progressbar>
                      </div>
                 </div>
+
+                <div class="progress">
+                    <span class="skill">Java <i class="val">{{habilidades.java}}  %</i></span>
+                    <div class="progress-bar-wrap">
+                        <ngb-progressbar  
+                            [value]="75" 
+                            [striped]="false" 
+                            [animated]="true" >
+                        </ngb-progressbar>
+                     </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">SpringBoot <i class="val">{{habilidades.springBoot}}  %</i></span>
+                    <div class="progress-bar-wrap">
+                        <ngb-progressbar  
+                        [value]="75" 
+                        [striped]="false" 
+                        [animated]="true" >
+                    </ngb-progressbar>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -117,25 +135,67 @@
 
 <!-- Modal para modificar -->
 <ng-template #modalHabilidadesUpdate let-modal>
-    <div class="modal-content">
+    <form  (ngSubmit)="save()">
+    
+        <div class="modal-content">
    
         <div class="modal-header">
-            <h5 class="modal-title">Actualizar</h5>
+            <h4 class="modal-title">Actualizar mis Habilidades</h4>
             <button type="button" class="btn" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cerrado desde la ventana')">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
+
         <div class="modal-body">
+               
+                    <div class="row">
+                        <table class="table">
+                            <tr> 
+                                <th>FrondEnd</th><th></th>
+                                <th>BackEnd</th><th></th>
+                            </tr>    
+                            <tr> 
+                                <td class="text-center">Html</td>
+                                <td><input [(ngModel)]="habilidades.html" name="html" class="form-control sinborde"></td>
+                                <td class="text-center">Mysql</td>
+                                <td><input [(ngModel)]="habilidades.mysql" name="mysql" class="form-control sinborde"></td>
+                            </tr>
+                            <tr> 
+                                <td class="text-center">Css</td>
+                                <td><input [(ngModel)]="habilidades.css" name="css" class="form-control sinborde"></td>
+                                <td class="text-center">Php</td>
+                                <td><input [(ngModel)]="habilidades.php" name="php"  class="form-control sinborde"></td>
+                            </tr>
+                            <tr> 
+                                <td class="text-center">JavaScript</td>
+                                <td><input [(ngModel)]="habilidades.javaScript" name="javaScript" class="form-control sinborde"></td>
+                                <td class="text-center">SpringBoot</td>
+                                <td><input [(ngModel)]="habilidades.springBoot" name="springBoot" class="form-control sinborde"></td>
+                            </tr>
+                            <tr> 
+                                <td class="text-center">TypeScript</td>
+                                <td><input [(ngModel)]="habilidades.typeScript" name="typeScript" class="form-control sinborde"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr> 
+                                <td class="text-center">Angular</td>
+                                <td><input [(ngModel)]="habilidades.angular" name="angular" class="form-control sinborde"></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>  
+            
+                    </div>
         
-
-        </div>
-        
-        <div class="modal-footer">
-
-            <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Si')">Guardar los cambios</button>
-        </div>
-
+            <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-secondary">Guardar los cambios</button>
+            </div>
+    
     </div>
+
+</form>
 </ng-template>
 
 

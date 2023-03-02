@@ -1,9 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { User, UserResponse } from '../interfaces/user.interface';
 import { catchError, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+const vto = new JwtHelperService();
 
 
 @Injectable({
@@ -12,8 +15,17 @@ import { Router } from '@angular/router';
 
 export class AuthService {
 
-  constructor( private http: HttpClient, private router: Router) {  }
+   loggedIn = new BehaviorSubject<boolean>(false);
+   prueba : boolean = false;
 
+  constructor( private http: HttpClient, private router: Router) { 
+
+    this.checkToken();
+   }
+
+  get isLogged(): Observable<boolean> {
+    return this.loggedIn.asObservable();
+  }
 
   login(authData: User): Observable<UserResponse | void> {
     return this.http
@@ -23,6 +35,7 @@ export class AuthService {
           console.log(res);
           localStorage.setItem('token', res.token);
           localStorage.setItem('expira', " 1 hora");
+          this.loggedIn.next(true);
           this.router.navigate(['/']);
           return res;
         }),
@@ -37,8 +50,23 @@ export class AuthService {
     return throwError(errorMessage);
   }
 
-
+  logout(): void {
+    localStorage.removeItem('token');
+    this.loggedIn.next(false);
+    
+  }
   
+   checkToken(): boolean {
+    const userToken = localStorage.getItem('token');
+    const isExpired = vto.isTokenExpired(userToken);
+    if (isExpired) {  
+      this.logout();
+      return false;
+    }else{
+      this.loggedIn.next(true);
+      return true;
+    }
+  }
  
 }
 
