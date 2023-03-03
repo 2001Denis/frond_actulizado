@@ -16,7 +16,6 @@ const vto = new JwtHelperService();
 export class AuthService {
 
    loggedIn = new BehaviorSubject<boolean>(false);
-   prueba : boolean = false;
 
   constructor( private http: HttpClient, private router: Router) { 
 
@@ -34,7 +33,7 @@ export class AuthService {
         map((res: UserResponse) => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          localStorage.setItem('expira', " 1 hora");
+          localStorage.setItem('expira', "1 hora");
           this.loggedIn.next(true);
           this.router.navigate(['/']);
           return res;

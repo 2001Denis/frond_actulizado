@@ -11,7 +11,18 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class HabilidadesComponent implements OnInit {
    
   conceptos : any;
-  habilidades : any;
+  habilidades :  any = 
+      { 
+        html: null, 
+        css: null,
+        javaScript: null, 
+        angular: null,
+        mysql: null, 
+        php: null,
+        java: null, 
+        springBoot: null,
+        typeScript: null
+      };
   item : any;
   @Input()
   isLogged : boolean | undefined;
@@ -23,8 +34,17 @@ export class HabilidadesComponent implements OnInit {
   ngOnInit() {
     this.datosPorfolio.obtenerDatos().subscribe( data => {
         this.conceptos = data.perfil.conceptos;
-        this.habilidades = data.habilidades;
-      });
+
+        this.habilidades.html = data.habilidades.html;
+        this.habilidades.css = data.habilidades.css;
+        this.habilidades.javaScript = data.habilidades.javaScript;
+        this.habilidades.mysql = data.habilidades.mysql;
+        this.habilidades.php = data.habilidades.php;
+        this.habilidades.java = data.habilidades.java;
+        this.habilidades.springBoot = data.habilidades.springBoot;
+        this.habilidades.angular = data.habilidades.angular;
+        this.habilidades.typeScript = data.habilidades.typeScript;
+    });
   }
   
   mostrarModal( data: any, modalProyecto: any ){
@@ -33,8 +53,7 @@ export class HabilidadesComponent implements OnInit {
   }
 
   save (){
-    console.log("update habilidades ----------------------------");
-    console.log (this.habilidades);
+    console.log("update habilidades: ", this.habilidades);
   }
 }
 

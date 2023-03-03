@@ -99,7 +99,6 @@
         </div>
         
         <div class="modal-footer">
-
             <button type="submit" class="btn btn-outline-secondary">Guardar los cambios</button>
         </div>
 
@@ -113,18 +112,17 @@
 <ng-template #modalCertificadoEliminar let-modal>
     <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title">Eliminar {{item.nombre}}</h5>
+        <h5 class="modal-title">{{indice + 1}} - {{item.titulo}}</h5>
         <button type="button" class="btn" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cerrado desde la ventana')">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-body">
-        ¿Quieres continuar? 
+        ¿Quieres eliminarlo? 
+        <input type="hidden" [(ngModel)]="item.titulo" name="titulo">>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modal.close('No')">No</button>
-        <button type="button" class="btn btn-primary" (click)="modal.close('Si')">Si</button>
-    </div>
+        <button type="submit" class="btn btn-outline-primary" (click)="eliminar( )">Eliminar</button> </div>
     </div>
 </ng-template>
 

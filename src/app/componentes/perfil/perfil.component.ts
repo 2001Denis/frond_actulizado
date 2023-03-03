@@ -10,7 +10,17 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class PerfilComponent implements OnInit{
 
-  perfil: any;
+  perfil: any = 
+  { 
+    correo: null, 
+    celular: null,
+    ciudad: null, 
+    edad: null,
+    ocupacion: null, 
+    trabajo: null,
+    conceptos: null
+  };
+
   item : any;
 
   @Input()
@@ -22,7 +32,13 @@ export class PerfilComponent implements OnInit{
 
   ngOnInit() {
      this.datosPorfolio.obtenerDatos().subscribe( data => {
-     this.perfil = data.perfil;
+          this.perfil.correo = data.perfil.correo;
+          this.perfil.celular = data.perfil.celular;
+          this.perfil.ciudad = data.perfil.ciudad;
+          this.perfil.edad = data.perfil.edad;
+          this.perfil.ocupacion = data.perfil.ocupacion;
+          this.perfil.trabajo = data.perfil.trabajo;
+          this.perfil.conceptos = data.perfil.conceptos;
     });
   }
    
@@ -32,7 +48,8 @@ export class PerfilComponent implements OnInit{
   }
 
   save (){
-    console.log("update perfil ----------------------------");
-    console.log (this.perfil);
+    console.log("update perfil: ", this.perfil );
   }
+
+  
 }

@@ -7,22 +7,23 @@
       "ocupacion": "Estudiante Univertitario",
       "trabajo": "Disponible",
       "conceptos": "Conceptos y herramientas que utilizare : BackEnd, FrondEnd, DevOps, Testing, Seguridad Web ( JWT ), comunicacion efectiva, Api Rest, Scrum, Mvc, Control de versiones Git, GitHub, Uml, Firebase, Heroku, Heroku Add On, entre otras."
-    
-
+ 
   },
+
   "habilidades": {
 
-          "angular": 0,
-          "typeScript": 0,
-          "html": 75,
-          "css": 30,
-          "javaScript": 80,
-          "springBoot": 10,
-          "mysql": 70,
-          "php": 75,
-          "java": 75
+          "angular": "0",
+          "typeScript": "0",
+          "html": "75",
+          "css": "30",
+          "javaScript": "80",
+          "springBoot": "10",
+          "mysql": "70",
+          "php": "75",
+          "java": "75"
       
   },
+
   "certificados": [
            {
               "titulo": "Google Activate",
@@ -45,6 +46,7 @@
              
           }
         ],
+        
   "proyectos": [
     {
           "nombre": "Portafolio",

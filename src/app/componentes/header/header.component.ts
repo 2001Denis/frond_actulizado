@@ -17,10 +17,7 @@ export class HeaderComponent {
     }
  
    public salir():void{
-
-    window(this.auth.isLogged);
-    console.log("fggffgfgfgfgfgfgfgfgfgf");
-     this.auth.logout;
+    localStorage.removeItem('token');
    }
    
 }
