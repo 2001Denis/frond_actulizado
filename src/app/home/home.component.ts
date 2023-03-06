@@ -13,5 +13,6 @@ export class HomeComponent  {
 
   constructor( private admin : AuthService ){
     this.isLogged = this.admin.checkToken();
+   
   }
 }

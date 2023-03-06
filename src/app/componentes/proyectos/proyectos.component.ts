@@ -18,20 +18,27 @@ export class ProyectosComponent implements OnInit{
 
   constructor(private datosPorfolio: PorfolioService, private modalService: NgbModal){}
 
-  ngOnInit() {
-    this.datosPorfolio.obtenerDatos().subscribe( data => {
-    this.proyectosList = data.proyectos;
-    });
- }
- mostrarModal( data: any, modalProyecto: any ){
-  this.item = data;
-  this.modalService.open(modalProyecto);
-}
+    ngOnInit() {
+        this.datosPorfolio.obtenerDatos().subscribe( data => {
+        this.proyectosList = data.proyectos;
+        });
+    }
+    mostrarModal( data: any, modalProyecto: any ){
+      this.item = data;
+      this.modalService.open(modalProyecto);
+    }
 
-mostrarModalEliminar( data: any, modalProyectoEliminar: any ){
-  this.item = data;
-  this.modalService.open(modalProyectoEliminar);
-}
+    mostrarModalEliminar( data: any, modalProyectoEliminar: any ){
+      this.item = data;
+      this.modalService.open(modalProyectoEliminar);
+    }
+    
+    save (item : any){
+      console.log("update proyecto : ", item);
+    }
 
+    delete (item : any){
+      console.log("delete proyecto : ", item);
+    }
 
 }

@@ -8,10 +8,14 @@ import { AuthService } from "../servicios/auth.service";
 })
 export class LoginComponent {
  
-  logeado : string = "Desde login";
+  logeado : string = "";
   isLogged : boolean | undefined;
 
-  form: any = { username: null, password: null  };
+  form: any = 
+      { 
+        username: null, 
+        password: null  
+      };
   errorMessage : string = "";
   error : boolean = false;
   
@@ -23,8 +27,7 @@ export class LoginComponent {
       next: data => {
         this.logeado = "Modo edicion";
         this.isLogged = true;
-        // window.location.reload();
-      },
+       },
       error: err => {
         this.isLogged = false;
         this.errorMessage = "Credenciales incorrectas. Vuelva a internerlo.";

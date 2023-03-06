@@ -1,6 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { window } from 'rxjs';
-import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,12 +10,10 @@ export class HeaderComponent {
    @Input()
    isLogged : boolean | undefined;
   
-   constructor(private auth : AuthService){ 
-   
-    }
+   constructor(){ }
  
    public salir():void{
-    localStorage.removeItem('token');
+        localStorage.removeItem('token');
    }
    
 }

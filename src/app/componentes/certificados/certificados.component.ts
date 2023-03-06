@@ -31,7 +31,6 @@ export class CertificadosComponent implements OnInit{
     this.item = data;
     this.indice = indice;
     this.modalService.open(modalProyecto);
-    console.log("--update objeto nro: ",indice);
   }
 
   mostrarModalEliminar( data: any, modalProyectoEliminar: any , indice: number ){
@@ -40,11 +39,11 @@ export class CertificadosComponent implements OnInit{
     this.modalService.open(modalProyectoEliminar);
   }
 
-  save (){
-    console.log("update certificados : ", this.certificadosList);
+  save (item : any){
+    console.log("update certificado : ", item);
   }
 
-  eliminar (  ){
-    console.log("objeto : ", this.certificadosList);
+  delete (item : any){
+    console.log("delete certificado : ", item);
   }
 }

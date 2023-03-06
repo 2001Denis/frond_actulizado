@@ -22,6 +22,7 @@
 
         <div class="row">
             <div class="col-lg-12">
+
               <div *ngFor="let item of proyectosList">
 
                     <div class="resume-item pb-0">
@@ -40,6 +41,89 @@
                     </div>
 
               </div>
+
+
+
+
+                            <!-- Modal para modificar -->
+                            <ng-template #modalProyectoUpdate let-modal>
+                                <div class="modal-content">
+                            
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Actualizar {{item.nombre}}</h5>
+                                        <button type="button" class="btn" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cerrado desde la ventana')">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                    
+                                            <div  class="resume-item">
+                                                <small>Titulo</small>
+                                                <input type="text" class="form-control sinborde" value={{item.nombre}} >
+                                            </div>   
+                                            <p>   
+                                            <div class="resume-item">
+                                                <small> Comentario</small>
+                                                <input type="text" class="form-control sinborde" value={{item.comentario}}>
+                                            </div>                 
+                                            <p>        
+                                            <div class="resume-item">
+                                                <small>Detalle</small>
+                                                <input type="text" class="form-control sinborde" value={{item.detalle}}>
+                                            </div>
+                                            <p>
+                                            <div class="resume-item">
+                                                <small>Link</small>
+                                                <input type="url" class="form-control sinborde" value={{item.url}}>
+                                            </div>
+                                            <p>
+                                                <div class="resume-item">
+                                                    <small>Seleccione un logo</small>
+                                                    <p>
+                                                    <div>
+                                                        <img src="assets/img/1.png ">
+                                                        <img src="assets/img/1.png ">
+                                                        <img src="assets/img/1.png ">
+                                                        <img src="assets/img/1.png ">
+                                                        <img src="assets/img/1.png ">
+                                                        <img src="assets/img/1.png ">
+                                                                
+                                                    </div>
+                                                </div>
+                                    </div>
+                                    
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-secondary" (click)="save ( item )">Guardar los cambios</button>
+                                    </div>
+
+                                </div>
+                            </ng-template>
+
+
+                            <!-- Modal para confirmar Eliminar -->
+                            <ng-template #modalProyectoEliminar let-modal>
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Eliminar {{item.nombre}}</h5>
+                                    <button type="button" class="btn" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cerrado desde la ventana')">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ¿Quieres continuar? 
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" (click)="delete(item)">Eliminar</button>
+                                </div>
+                                </div>
+                            </ng-template>
+
+
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -47,83 +131,7 @@
 <!-- End Mis Proyectos -->
 
 
-   
-<!-- Modal para modificar -->
-<ng-template #modalProyectoUpdate let-modal>
-    <div class="modal-content">
-   
-        <div class="modal-header">
-            <h5 class="modal-title">Actualizar {{item.nombre}}</h5>
-            <button type="button" class="btn" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cerrado desde la ventana')">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-        
-                <div  class="resume-item">
-                    <small>Titulo</small>
-                    <input type="text" class="form-control sinborde" value={{item.nombre}} >
-                </div>   
-                <p>   
-                <div class="resume-item">
-                    <small> Comentario</small>
-                    <input type="text" class="form-control sinborde" value={{item.comentario}}>
-                </div>                 
-                <p>        
-                <div class="resume-item">
-                    <small>Detalle</small>
-                    <input type="text" class="form-control sinborde" value={{item.detalle}}>
-                </div>
-                <p>
-                <div class="resume-item">
-                    <small>Link</small>
-                    <input type="url" class="form-control sinborde" value={{item.url}}>
-                </div>
-                <p>
-                    <div class="resume-item">
-                        <small>Seleccione un logo</small>
-                        <p>
-                        <div>
-                            <img src="assets/img/1.png ">
-                            <img src="assets/img/1.png ">
-                            <img src="assets/img/1.png ">
-                            <img src="assets/img/1.png ">
-                            <img src="assets/img/1.png ">
-                            <img src="assets/img/1.png ">
-                                     
-                        </div>
-                    </div>
-        </div>
-        
-        <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Si')">Guardar los cambios</button>
-        </div>
-
-    </div>
-</ng-template>
-
-
-
-<!-- Modal para confirmar Eliminar -->
-<ng-template #modalProyectoEliminar let-modal>
-    <div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title">Eliminar {{item.nombre}}</h5>
-        <button type="button" class="btn" data-dismiss="modal" aria-label="Close" (click)="modal.close('Cerrado desde la ventana')">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        ¿Quieres continuar? 
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modal.close('No')">No</button>
-        <button type="button" class="btn btn-primary" (click)="modal.close('Si')">Si</button>
-    </div>
-    </div>
-</ng-template>
-
-
+  
 
 
 <!-- Modal para nuevo proyecto -->
