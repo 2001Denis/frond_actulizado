@@ -5,6 +5,7 @@ import { User, UserResponse } from '../interfaces/user.interface';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Url } from '../interfaces/portafolio.interface';
 
 const vto = new JwtHelperService();
 
@@ -28,7 +29,7 @@ export class AuthService {
 
   login(authData: User): Observable<UserResponse | void> {
     return this.http
-      .post<UserResponse>(`http://localhost:3000/auth/login`, authData)
+      .post<UserResponse>(`${Url.Api}/auth/login`, authData)
       .pipe(
         map((res: UserResponse) => {
           localStorage.setItem('token', res.token);
@@ -39,6 +40,7 @@ export class AuthService {
         }),
      );
   }
+
 
   logout(): void {
     localStorage.removeItem('token');
